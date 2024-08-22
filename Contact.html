@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+      <link rel="shortcut icon" href="maruth.jfif" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>MARUTH : Contact</title>
+<link rel="stylesheet" href="Style.css" type="text/css" media="all" />
+  </head>
+  <body>
+      <header>
+    <div class="navbar">
+      <div class="flex">
+        <img src="maruth.jfif" alt=""><div class="logo">
+          MARUTH
+        </div>
+      </div>
+      <!-- <div class="logo">MARUTH</div> -->
+      <img id="menubtn" src="/Media/menu.png" alt="" />
+      <img id="crossbtn" src="/Media/cross.png" alt="" />
+    </div>
+  </header>
+  <div id="menu">
+    <ul>
+      <li><button onclick="window.location.href='/index.html';">Home</button></li>
+      <li><button onclick="window.location.href='/Graph.html';">Graph view</button></li>
+      <li><button onclick="window.location.href='/Ai.html';">Maruth : Ai</button></li>
+      <li><button onclick="window.location.href='/Contact.html';">Contact</button></li>
+    </ul>
+  </div>
+    <div class="contact">
+<form action="https://formsubmit.co/sharmaparbin91@gmail.com" method="POST">
+<input type="text" class="input" name="name" placeholder="Name" required />
+<input class="input" placeholder='Email' type="email" name="email" required />
+<input class="input" type="hidden" name="_subject" value="New Mail :PARBIN" />
+<input class="input" placeholder='Subject' type="text" name="subject" required />
+<textarea placeholder="Your Message" class="input" name="message" rows="10" required></textarea>
+<input type="text" name="_honey" style='display:none' />
+<input type="hidden" name="_autoresponse" value="We have recieved your email." />
+<input type="hidden" name="_template" value="table" /><br />
+<button class='but' type="submit">Submit</button>
+</form>
+</div>
+  </body>
+  <script type="text/javascript" charset="utf-8">
+    let menu_btn=document.getElementById("menubtn");
+let close_btn=document.getElementById("crossbtn");
+let menu=document.getElementById("menu");
+menu_btn.addEventListener("click",function(){
+  close_btn.style.display="block";
+  menu_btn.style.display="none";
+  menu.style.display="flex";
+});
+close_btn.addEventListener("click", function() {  // Added missing functionality
+  close_btn.style.display = "none";
+  menu_btn.style.display = "block";
+  menu.style.display = "none";
+});
+  </script>
+</html>

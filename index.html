@@ -8,244 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <title>MARUTH : Air Quality Index </title>
-  <style>
-    @font-face {
-      font-family: 'inlander';
-      src: url(lottepaperfang.ttf);
-    }
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: #121212;
-      /* Dark background color */
-      color: #e0e0e0;
-      /* Light text color for contrast */
-    }
-
-    header {
-      width: 100%;
-      background-color: #1f1f1f;
-      /* Dark header background */
-      color: #e0e0e0;
-      /* Light text color */
-      padding: 10px 0;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.5);
-      /* Darker shadow */
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      /* max-width: 1200px; */
-      margin: 0 auto;
-      padding: 0 20px;
-      width: 100vw;
-      height: 50px;
-      background-color: #333;
-      /* Darker green for navbar */
-    }
-
-    .navbar .logo {
-      font-size: 18px;
-      font-weight: bold;
-    }
-    .flex {
-      display: flex;
-      font-family: 'inlander';
-      justify-content: space-evenly;
-      width: 200px;
-      height: auto;
-      align-items: center;
-      flex-direction: row;
-      /* background-color: #e0e0e0; */
-    }
-    .flex img {
-      width: 40px;
-      border-radius: 50%;
-    }
-
-    main {
-      width: 90%;
-      max-width: 800px;
-      margin-top: 60px;
-      /* Adjusted to avoid overlap with fixed header */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .buttons {
-      margin-bottom: 20px;
-    }
-
-    button {
-      margin: 5px;
-      padding: 10px 20px;
-      font-size: 16px;
-      font-family: newFont;
-      cursor: pointer;
-      background-color: #444;
-      /* Dark button background */
-      color: #e0e0e0;
-      /* Light button text */
-      border: none;
-      border-radius: 5px;
-      transition: ease 0.3s;
-    }
-
-    button:hover {
-      background-color: white;
-      color: black;
-      border: rgb(144, 229, 255) 1px solid;
-      /* Slightly lighter on hover */
-    }
-
-    .mapouter {
-      position: relative;
-      width: 100vw !important;
-      height: 0;
-      padding-bottom: 56.25%;
-      /* Aspect ratio 16:9 */
-      margin-bottom: 20px;
-    }
-
-    .gmap_canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw !important;
-      height: 100%;
-      overflow: hidden;
-      background: none !important;
-    }
-
-    .gmap_iframe {
-      width: 100vw !important;
-      height: 100%;
-      border: 0;
-    }
-
-    #aqi-info {
-      font-size: 18px;
-      padding: 20px;
-      color: #fff;
-      /* White text color for contrast */
-      border-radius: 5px;
-      text-align: center;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      /* Center items horizontally */
-      height: auto;
-      justify-content: center;
-    }
-
-    .good {
-      background-color: #2e7d32;
-      /* Dark green */
-    }
-
-    .moderate {
-      background-color: #fbc02d;
-      /* Dark yellow */
-      color: black;
-      /* Black text for contrast */
-    }
-
-    .hazardous {
-      background-color: #c62828;
-      /* Dark red */
-    }
-    .unhealthy {
-      background-color: #4f1a1a;
-      /* Dark red */
-    }
-    .veryunhealthy {
-      background-color: #4c004c;
-      /* Dark red */
-    }
-    #Name {
-      font-weight: bold;
-      font-size: 18px;
-    }
-    #Value {
-      font-size: 20px;
-    }
-    #rem {
-      font-size: 15px;
-    }
-    .reference-index {
-      border-radius: 10px;
-      width: 100%;
-      max-width: 800px;
-      margin-top: 20px;
-      /* Space between map and reference index */
-      background-color: #1e1e1e;
-      /* Dark background */
-      box-shadow: 0 2px 4px rgba(0,0,0,0.5);
-      /* Darker shadow */
-      overflow-x: auto;
-      /* Handle horizontal overflow */
-    }
-
-    .reference-index table {
-      border-radius: 10px;
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .reference-index th, .reference-index td {
-      border: 1px solid #333;
-      /* Darker border */
-      padding: 8px;
-      text-align: left;
-    }
-
-    .reference-index th {
-      background-color: #2c2c2c;
-      /* Slightly lighter dark color */
-    }
-
-    .reference-index td {
-      text-align: center;
-    }
-
-    .flexbox {
-      display: none;
-      justify-content: space-between;
-      flex-direction: row;
-      align-items: center;
-      background-color: #1e1e1e;
-      /* Dark background for flexbox */
-      padding: 20px;
-      margin-bottom: 20px;
-      width: 100%;
-      max-width: 800px;
-      border-radius: 10px;
-      /* Rounded corners */
-      box-shadow: 0 2px 4px rgba(0,0,0,0.5);
-      /* Darker shadow */
-      margin-top: 20px;
-      /* Space above */
-    }
-
-    .img {
-      width: 250px;
-      border-radius: 10px;
-      margin-right: 10px;
-      /* Space between image and text */
-    }
-  </style>
+<link rel="stylesheet" href="Style.css" type="text/css" media="all" />
 </head>
 <body>
   <header>
@@ -256,8 +19,22 @@
         </div>
       </div>
       <!-- <div class="logo">MARUTH</div> -->
+      <img id="menubtn" src="/Media/menu.png" alt="" />
+      <img id="crossbtn" src="/Media/cross.png" alt="" />
     </div>
   </header>
+  <div id="menu">
+    <ul>      <li><button onclick="window.location.href='/index.html';">Home</button></li>
+      <li><button onclick="window.location.href='/Graph.html';">Graph view</button></li>
+      <li><button onclick="window.location.href='/Ai.html';">Maruth : Ai</button></li>
+      <li><button onclick="window.location.href='/Contact.html';">Contact</button></li>
+   
+    </ul>
+  </div>
+  
+  
+  
+  
   <main>
     <div class="mapouter">
       <div class="gmap_canvas">
@@ -265,7 +42,7 @@
       </div>
     </div>
 
-    <div class="reference-index">
+    <div class="reference-index" style="width:90vw;">
       <table>
         <thead>
           <tr>
@@ -287,26 +64,198 @@
         </tbody>
       </table>
     </div>
-    <div class="buttons">
-      <button onclick="showAirQuality('Park Street', 22.5520, 88.3535)">Park Street</button>
-      <button onclick="showAirQuality('Behala', 22.4971, 88.2773)">Behala</button>
-      <button onclick="showAirQuality('Gariahat', 22.5205, 88.3661)">Gariahat</button>
-      <!-- <button onclick="showAirQuality('Dum Dum', 22.6218, 88.4187)">Dum Dum</button> -->
-      <button onclick="showAirQuality('Kalighat', 22.5234, 88.3466)">Kalighat</button>
-      <button onclick="showAirQuality('Jadavpur', 22.4999, 88.3702)">Jadavpur</button>
-    </div>
+    <div class="dropdown">
+  <select id="capitalCityDropdown" onchange="locationChanged2('capitalCityDropdown')">
+    <option value="" disabled selected>Select a capital city (India)</option>    
+    <option value="Agartala,23.8315,91.2868,https://i.postimg.cc/ydTwDKZ1/agartala.jpg">Agartala</option>
+    <option value="Aizawl,23.7271,92.7176,https://i.postimg.cc/tTbKRJ7v/aizawl.jpg">Aizawl</option>
+    <option value="Amaravati,16.5062,80.6480,https://i.postimg.cc/Y0qTgP61/amravati.jpg">Amaravati</option>
+    <option value="Bengaluru,12.9716,77.5946,https://i.postimg.cc/2ycMxxGg/bengaluru.jpg">Bengaluru</option>
+    <option value="Bhopal,23.2599,77.4126,https://i.postimg.cc/kMB0n05m/bhopal.jpg">Bhopal</option>
+    <option value="Bhubaneswar,20.2961,85.8245,https://i.postimg.cc/C1Mc6qR0/bhubaneswar.jpg">Bhubaneswar</option>
+    <option value="Chandigarh,30.7333,76.7794,https://i.postimg.cc/FRh656n2/chandigarh.jpg">Chandigarh</option>
+    <option value="Chennai,13.0827,80.2707,https://i.postimg.cc/VsVKD5my/chennai.jpg">Chennai</option>
+    <option value="Dehradun,30.3165,78.0322,https://i.postimg.cc/Zn2jRsVY/dehradun.jpg">Dehradun (Winter)</option>
+    <option value="Dispur,26.1433,91.7898,https://i.postimg.cc/yYDbHcvY/dispur.jpg">Dispur</option>
+    <option value="Daman,20.3974,72.8328,https://i.postimg.cc/65ZFZCRb/daman.jpg">Daman</option>
+    <option value="Gandhinagar,23.2156,72.6369,https://i.postimg.cc/kXGkgkXC/gandhinagar.jpg">Gandhinagar</option>
+    <option value="Gangtok,27.3314,88.6138,https://i.postimg.cc/1XkcPn3f/gangtok.jpg">Gangtok</option>
+     <option value="Gairsain,30.0513,79.2961,https://i.postimg.cc/Hk7RQXyP/garisain.jpg">Gairsain (Summer)</option>
+    <option value="Hyderabad,17.3850,78.4867,https://i.postimg.cc/1XtY4qSB/hydrabad.jpg">Hyderabad</option>
+    <option value="Imphal,24.8170,93.9368,https://i.postimg.cc/sDb0DxNP/imphal.jpg">Imphal</option>
+    <option value="Itanagar,27.0844,93.6053,https://i.postimg.cc/0NY44vZY/itanagar.jpg">Itanagar</option>
+    <option value="Jaipur,26.9124,75.7873,https://i.postimg.cc/VNW7RRL4/jaipur.jpg">Jaipur</option>
+    <option value="Jammu,32.7266,74.8570,https://i.postimg.cc/FRPTtHSL/jammu.jpg">Jammu (Winter)</option>
+    <option value="Kavaratti,10.5626,72.6351,https://i.postimg.cc/Prv2ch5C/kavaratti.jpg">Kavaratti</option>
+    <option value="Kohima,25.6701,94.1077,https://i.postimg.cc/8zhwpHWD/kohima.jpg">Kohima</option>
+    <option value="Kolkata,22.5726,88.3639,https://i.postimg.cc/Hk5vJmqq/kolkata.jpg">Kolkata</option>
+    <option value="Leh,34.1526,77.5771,https://i.postimg.cc/HWRfj6J7/leh.jpg">Leh</option>
+    <option value="Lucknow,26.8467,80.9462,https://i.postimg.cc/SNPH2DJM/lucknow.jpg">Lucknow</option>
+    <option value="Mumbai,19.0760,72.8777,https://i.postimg.cc/C5zmwpC6/mumbai.jpg">Mumbai</option>
+    <option value="New Delhi,28.6139,77.2090,https://i.postimg.cc/hGcsfdbm/newdelhi.jpg">New Delhi</option>
+    <option value="Panaji,15.4909,73.8278,https://i.postimg.cc/Pf3R92bR/panaji.jpg">Panaji</option>
+    <option value="Patna,25.5941,85.1376,https://i.postimg.cc/50kS7kc5/patna.jpg">Patna</option>
+    <option value="Port Blair,11.6234,92.7265,https://i.postimg.cc/W3477cyb/portblair.jpg">Port Blair</option>
+    <option value="Puducherry,11.9416,79.8083,https://i.postimg.cc/YSR3gCbs/puducherry.jpg">Puducherry</option>
+    <option value="Raipur,21.2514,81.6296,https://i.postimg.cc/vTN2nZHs/raipur.jpg">Raipur</option>
+    <option value="Ranchi,23.3441,85.3096,https://i.postimg.cc/pdb7krQV/ranchi.jpg">Ranchi</option>
+    <option value="Shillong,25.5788,91.8933,https://i.postimg.cc/nrjY6YZy/shillong.jpg">Shillong</option>
+    <option value="Shimla,31.1048,77.1734,https://i.postimg.cc/s2r678yv/shimla.jpg">Shimla</option>
+    <option value="Srinagar,34.0837,74.7973,https://i.postimg.cc/wvFG6kC3/Srinagar.jpg">Srinagar (Summer)</option>
+    <option value="Thiruvananthapuram,8.5241,76.9366,https://i.postimg.cc/QN02sXDS/Thiruvananthapuram.jpg">Thiruvananthapuram</option>
+
+  </select>
+</div>
+    
+<div class="dropdown">
+  <select id="locationDropdown" onchange="locationChanged()">
+    <option value="" disabled selected>Select a location(in Kolkata)</option>
+    <option value="Alipore,22.510960,88.336662,https://i.postimg.cc/tRxBvpTY/alipore.jpg">Alipore</option>
+    <option value="Ballygunge,22.5280,88.3532,https://i.postimg.cc/P543byqy/Ballygunge.jpg">Ballygunge</option>
+    <option value="Bara Bazar,22.5754,88.3522,https://i.postimg.cc/cHVX15Dx/barabazar.jpg">Bara Bazar</option>
+    <option value="Barisha,22.4826,88.3116,https://i.postimg.cc/R0hR7zyC/barisha.jpg">Barisha</option>
+    <option value="Bartala,22.5048,88.2900,https://i.postimg.cc/NFHC1wy2/bartala.jpg">Bartala</option>
+    <option value="Behala,22.4971,88.2773,https://i.postimg.cc/q7vm1KhT/behala.jpg">Behala</option>
+    <option value="Beleghata,22.5658,88.3912,https://i.postimg.cc/2yR7NL63/beleghata.jpg">Beleghata</option>
+    <option value="Bidhannagar,22.5867,88.4174,https://i.postimg.cc/ZK6Dn4t1/bidhannagar.jpg">Bidhannagar</option>
+    <option value="Bhowanipore,22.5362,88.3455,https://i.postimg.cc/6pLSjwMd/bhawanipore.jpg">Bhowanipore</option>
+    <option value="Chetla,22.517040,88.338380,https://i.postimg.cc/P5tKqDMw/Chetla.jpg">Chetla</option>
+    <option value="Dum Dum,22.6218,88.4187,https://i.postimg.cc/BbHNjcyx/dumdum.jpg">Dum Dum</option>
+    <option value="Gariahat,22.5205,88.3661,https://i.postimg.cc/7LHRjcRj/Gariahat.jpg">Gariahat</option>
+    <option value="Howrah,22.5958,88.2636,https://i.postimg.cc/pVhSNK0V/howrah.jpg">Howrah</option>
+    <option value="Jadavpur,22.4999,88.3702,https://i.postimg.cc/KYp0wYBg/jadavpur.jpg">Jadavpur</option>
+    <option value="Kalighat,22.5234,88.3466,https://i.postimg.cc/8CYbw0gR/kalighat.jpg">Kalighat</option>
+    <option value="New Alipore,22.5202,88.3265,https://i.postimg.cc/fL0fPfM6/Newalipore.jpg">New Alipore</option>
+    <option value="Panihati,22.6906,88.3741,https://i.postimg.cc/jSZcnj8k/panihati.jpg">Panihati</option>
+    <option value="Park Street,22.5520,88.3535,https://i.postimg.cc/j5CFSftX/parkstreet.jpg">Park Street</option>
+    <option value="Ruby,22.5148,88.4000,https://i.postimg.cc/N0dntDqF/ruby.jpg">Ruby</option>
+    <option value="Sakher Bazar,22.4729,88.3085,https://i.postimg.cc/150JPBDS/sakherbazar.jpg">Sakher Bazar</option>
+    <option value="Salt Lake,22.5868,88.4175,https://i.postimg.cc/K8Fpgwm4/saltlake.jpg">Salt Lake</option>
+    <option value="Sealdah,22.5665,88.3691,https://i.postimg.cc/xCk62S3p/sealdah.jpg">Sealdah</option>
+    <option value="Taratalla,22.5014,88.2894,https://i.postimg.cc/tRKM97f3/taratala.jpg">Taratalla</option>
+    <option value="Thakur Pukur,22.4734,88.3218,https://i.postimg.cc/MT4rMGG8/thakurpukur.jpg">Thakur Pukur</option>
+    <option value="Tollygunge,22.5017,88.3316,https://i.postimg.cc/6qrLW62c/tollygaunge.jpg">Tollygunge</option>
+  </select>
+</div>
+
+
+  
+
+
+    <div class="main-box" id="main-box">
+      
+   
     <div class="flexbox" id="flexbox">
-      <img class="img" id="img" src="park-street.jpg" alt="Location Image" />
+      <img class="img" id="img" src="" alt="Location Image" />
     <div id="aqi-info">
       <div id="Name"></div>
       <div id="Value"></div>
-      <div id="rem"></div>
+    <!--   <div id="rem"></div> -->
     </div>
   </div>
+  <h1>Pollution</h1>
+  <div class="reference-index">
+  <table>
+    <thead>
+      <tr>
+        <th>Aspect</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Air Quality Index</td>
+        <td id="aqi44"></td>
+      </tr>
+      <tr>
+        <td>Main Pollutant</td>
+        <td id="main_pollutant"></td>
+      </tr>
+      <tr>
+        <td>Remark</td>
+        <td id="rem"></td>
+      </tr>
+    </tbody>
+  </table>
+   </div>
+   
+   
+   
+   
+  <h1>Weather</h1>
+  <div class="reference-index">
+  <table>
+    <thead>
+      <tr>
+        <th>Aspect</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Temperature(in Celsius)</td>
+        <td id="temperature"></td>
+      </tr>
+            <tr>
+        <td id="weath">Weather</td>
+        <td><img class="weather" id="icon" src="" alt="" /></td>
+      </tr>
+      <tr>
+        <td>Atmospheric Pressure (in hPa)</td>
+        <td id="atmp"></td>
+      </tr>
+      <tr>
+        <td>Humidity (in %)</td>
+        <td id="humidity"></td>
+      </tr>
+      <tr>
+        <td>Wind Speed (in m/s)</td>
+        <td id="windspeed"></td>
+      </tr>
+      <tr>
+        <td>Wind Direction (as an angle of 360° (N=0, E=90, S=180, W=270))</td>
+        <td id="winddirection"></td>
+      </tr>
+    </tbody>
+  </table>
+   </div>
+     </div>
 </main>
-
+<div class="ai-div" onclick="window.location.href='Ai.html';">
+<img class="ai" src="Media/ai3.gif" alt="Ai" />
+</div>
+  
 <script>
+let menu_btn=document.getElementById("menubtn");
+let close_btn=document.getElementById("crossbtn");
+let menu=document.getElementById("menu");
+menu_btn.addEventListener("click",function(){
+  close_btn.style.display="block";
+  menu_btn.style.display="none";
+  menu.style.display="flex";
+});
+close_btn.addEventListener("click", function() {  // Added missing functionality
+  close_btn.style.display = "none";
+  menu_btn.style.display = "block";
+  menu.style.display = "none";
+});
+function locationChanged2(dropdownId) {
+  const dropdown2 = document.getElementById('capitalCityDropdown');
+  const selectedOption2 = dropdown2.value;
+  if (selectedOption2) {
+    const [locationName, lat, lon,link] = selectedOption2.split(',');
+    showAirQuality(locationName, lat, lon,link);
+  }
+}
   // AirVisual API Key
+  function locationChanged() {
+    const dropdown = document.getElementById('locationDropdown');
+    const selectedOption = dropdown.value;
+    if (selectedOption) {
+      const [locationName, lat, lon, link] = selectedOption.split(',');
+      showAirQuality(locationName, lat, lon,link);
+    }
+  }
   const API_KEY = '258c2aff-5661-4282-a55b-2ec61898996a';
   let key = ["258c2aff-5661-4282-a55b-2ec61898996a", "2d3b2893-3a86-490a-a0da-01571dc84aeb", "0f9f82cc-2704-4b08-898e-61ae7006dbfc", "78749dea-2e5c-4ac2-bffe-b859c6df35b0", "9f84c593-985e-4c43-8009-61bdb19a78ab", "2e3f864e-439f-4594-8687-bf75a5ece920", "153eb3e9-8988-4fd0-84f3-217750d87804", "1973ebac-5584-40b1-ac86-ad99a53b714e", "6b75c323-cfa5-4900-bcdb-51b7442266ef", "05ffd473-1f8b-44b9-894b-5fc60c1808c5", "1cabccd1-4e47-488a-98c4-e8f3c2ae8f15"];
   let i = 0;
@@ -349,7 +298,7 @@
   }
 
   // Function to fetch and display AQI and update map iframe
-  async function showAirQuality(locationName, lat, lon) {
+  async function showAirQuality(locationName, lat, lon, link) {
     // Fetch AQI data
     const url = `https://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${lon}&key=${key[i]}`;
     const response = await fetch(url);
@@ -357,6 +306,17 @@
 
     // Get AQI and remark
     const aqi = data.data.current.pollution.aqius;
+    const city = data.data.city;
+    const state= data.data.state;
+    const country = data.data.country;
+    const main_pollutant1 = data.data.current.pollution.mainus;
+    const temp= data.data.current.weather.tp;// in celsius
+    const atm= data.data.current.weather.pr;//in hPa
+    const humidity1= data.data.current.weather.hu;// in %
+    const wind_speed= data.data.current.weather.ws;// in m/s
+    const wind_direction= data.data.current.weather.wd;//  as an angle of 360° (N=0, E=90, S=180, W=270)
+    const weather_icon= data.data.current.weather.ic;
+    
     const {
       remark,
       colorClass
@@ -368,32 +328,114 @@
     const Name = document.getElementById('Name');
     const rem = document.getElementById('rem');
     const img = document.getElementById('img');
-    const flexbox = document.getElementById('flexbox');
+    const aqi44 = document.getElementById('aqi44');
+    const main_pollutant = document.getElementById('main_pollutant');
+    const temp14 = document.getElementById('temperature');
+    const weath = document.getElementById('weath');
+    const atmp = document.getElementById('atmp');
+    const windspeed = document.getElementById('windspeed');
+    const winddirection = document.getElementById('winddirection');
+    const humidity = document.getElementById('humidity');
+    const icon = document.getElementById('icon');
+    
+    
+    
+    
+    const flexbox = document.getElementById('main-box');
     flexbox.style.display = "flex";
-    Name.innerHTML = `${locationName}`;
-    Value.innerHTML = `AQI: ${aqi}`;
+    Name.innerHTML = `${locationName},<br>${state}`;
+  img.src=link;
     rem.innerHTML = `${remark}`;
+   aqi44.innerHTML = `<b>${aqi}</b>`;
+   if(main_pollutant1=="p1"){
+    main_pollutant.innerHTML = `<a href="https://ww2.arb.ca.gov/resources/inhalable-particulate-matter-and-health">Pm 10</a>`;
+    
+   }
+   if(main_pollutant1=="p2"){
+    main_pollutant.innerHTML = `<a href="https://ww2.arb.ca.gov/resources/inhalable-particulate-matter-and-health">Pm 2.5</a>`;
+   }
+   if(main_pollutant1=="o3"){
+    main_pollutant.innerHTML = `<a href="https://www.epa.gov/ground-level-ozone-pollution/ground-level-ozone-basics">Ozone O3</a>`;
+   }
+   if(main_pollutant1=="n2"){
+    main_pollutant.innerHTML = `<a href="https://www.epa.gov/no2-pollution/basic-information-about-no2#:~:text=NO2%20along%20with%20other,effects%20on%20the%20respiratory%20system.">Nitrogen Dioxide NO2</a>`;
+   }
+   if(main_pollutant1=="s2"){
+    main_pollutant.innerHTML = `<a href="https://www.epa.gov/so2-pollution">Sulphur Dioxide SO2</a>`;
+   }
+   if(main_pollutant1=="co"){
+    main_pollutant.innerHTML = `<a href="https://ww2.arb.ca.gov/resources/carbon-monoxide-and-health">Carbon Monoxide CO</a>`;
+   }
+    temp14.innerHTML = `${temp}`;
+    atmp.innerHTML = `${atm}`;
+    humidity.innerHTML = `${humidity1}`;
+    windspeed.innerHTML = `${wind_speed}`;
+     winddirection.innerHTML = `${wind_direction}`;
+     
+     
+     //let weather4_icon="03d";
+     icon.src = `Media/${weather_icon}.png`;
+     if(weather_icon=="01d"){
+       weath.innerHTML="Weather : Clear Sky(day)";
+     }
+     if(weather_icon=="01n"){
+       weath.innerHTML="Weather : Clear Sky(night)";
+     }
+     if(weather_icon=="02d"){
+       weath.innerHTML="Weather : Few Clouds(day)";
+     }
+     if(weather_icon=="02n"){
+       weath.innerHTML="Weather : Few Clouds(night)";
+     }
+     if(weather_icon=="03d"){
+       weath.innerHTML="Weather : Scattered Clouds(day)";
+     }
+     if(weather_icon=="03n"){
+       weath.innerHTML="Weather : Scattered Clouds(night)";
+     }
+     if(weather_icon=="04d"){
+       weath.innerHTML="Weather : Broken Clouds(day)";
+     }
+     if(weather_icon=="04n"){
+       weath.innerHTML="Weather : Broken Clouds(night)";
+     }
+     if(weather_icon=="09d"){
+       weath.innerHTML="Weather : Shower Rain(day)";
+     }
+     if(weather_icon=="09n"){
+       weath.innerHTML="Weather : Shower Rain(night)";
+     }
+     if(weather_icon=="10d"){
+       weath.innerHTML="Weather : Rain(day)";
+     }
+     if(weather_icon=="10n"){
+       weath.innerHTML="Weather : Rain(night)";
+     }
+     if(weather_icon=="11d"){
+       weath.innerHTML="Weather : Thunderstorm(day)";
+     }
+     if(weather_icon=="11n"){
+       weath.innerHTML="Weather : Thunderstorm(night)";
+     }
+     if(weather_icon=="13n"){
+       weath.innerHTML="Weather : Snow(night)";
+     }
+     if(weather_icon=="13d"){
+       weath.innerHTML="Weather : Snow(day)";
+     }
+     if(weather_icon=="50n"){
+       weath.innerHTML="Weather : Mist(night)";
+     }
+     if(weather_icon=="50d"){
+       weath.innerHTML="Weather : Mist(day)";
+     }
+    rem.className = colorClass; // Apply background color class
     aqiInfo.className = colorClass; // Apply background color class
-    if (locationName == 'Park Street') {
-      img.src = 'park-street.jpg';
-    }
-    if (locationName == 'Behala') {
-      const img = document.getElementById('img');
-      img.src = 'behala.jpg';
-    }
-    if (locationName == 'Gariahat') {
-      img.src = 'gariahat.jpg';
-    }
-    if (locationName == 'Kalighat') {
-      img.src = 'kalighat.jpg';
-    }
-    if (locationName == 'Jadavpur') {
-      img.src = 'jadavpur.jpg';
-    }
+    
 
     // Update Google Maps iframe
     const iframe = document.getElementById('map-iframe');
-    iframe.src = `https://maps.google.com/maps?width=100%&height=100%&hl=en&q=${lat},${lon}&t=&z=14&ie=UTF8&iwloc=B&output=embed`;
+    iframe.src = `https://maps.google.com/maps?width=100%&height=100%&hl=en&q=${locationName}&t=&z=14&ie=UTF8&iwloc=B&output=embed`;
   }
 </script>
 </body>
