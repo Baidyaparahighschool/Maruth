@@ -42,15 +42,15 @@
       </div>
     </div>
 
-    <div class="reference-index" style="width:90vw;">
+      <div class="reference-index" style="width:90vw;">
       <table>
         <thead>
           <tr>
-            <th style="background-color: #2e7d32; color: white;">Good</th>
-            <th style="background-color: #fbc02d; color: black;">Moderate</th>
-            <th style="background-color: #4f1a1a; color: white;">Unhealthy</th>
-            <th style="background-color: #4c004c; color: white;">Very Unhealthy</th>
-            <th style="background-color: #c62828; color: white;">Hazardous</th>
+            <th style="background-color: rgba(0, 0, 255, 0.5); color: white;">Good</th>
+            <th style="background-color: rgba(0, 255, 0, 0.5); color: black;">Moderate</th>
+            <th style="background-color: rgba(255, 255, 0, 0.5); color: black;">Unhealthy</th>
+            <th style="background-color: rgba(255, 0, 0, 0.5); color: white;">Very Unhealthy</th>
+            <th style="background-color: rgba(128, 0, 128, 0.5); color: white;">Hazardous</th>
           </tr>
         </thead>
         <tbody>
@@ -233,11 +233,13 @@ menu_btn.addEventListener("click",function(){
   close_btn.style.display="block";
   menu_btn.style.display="none";
   menu.style.display="flex";
+  window.scrollTo(0,0);
 });
 close_btn.addEventListener("click", function() {  // Added missing functionality
   close_btn.style.display = "none";
   menu_btn.style.display = "block";
   menu.style.display = "none";
+  window.scrollTo(0,0);
 });
 function locationChanged2(dropdownId) {
   const dropdown2 = document.getElementById('capitalCityDropdown');

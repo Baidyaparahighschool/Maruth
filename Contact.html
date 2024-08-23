@@ -50,11 +50,13 @@ menu_btn.addEventListener("click",function(){
   close_btn.style.display="block";
   menu_btn.style.display="none";
   menu.style.display="flex";
+  window.scrollTo(0,0);
 });
 close_btn.addEventListener("click", function() {  // Added missing functionality
   close_btn.style.display = "none";
   menu_btn.style.display = "block";
   menu.style.display = "none";
+  window.scrollTo(0,0);
 });
   </script>
 </html>

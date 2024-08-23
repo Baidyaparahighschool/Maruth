@@ -26,6 +26,12 @@
       width: 100px;
     }
     .container{
+      width: 100vw;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
       margin-top: 100px;
     }
     header {
@@ -161,28 +167,30 @@
     }
 
     .good {
-      background-color: #2e7d32;
-      /* Dark green */
+      background-color: rgba(0, 0, 255, 0.5);
+      color: white;
     }
 
     .moderate {
-      background-color: #fbc02d;
-      /* Dark yellow */
+      background-color: rgba(0, 255, 0, 0.5);
+      
       color: black;
       /* Black text for contrast */
     }
 
     .hazardous {
-      background-color: #c62828;
-      /* Dark red */
+      background-color: rgba(128, 0, 128, 0.5);
+     color: white;
     }
     .unhealthy {
-      background-color: #4f1a1a;
+      background-color: rgba(255, 255, 0, 0.5);
+      color: black;
       /* Dark red */
     }
     .veryunhealthy {
-      background-color: #4c004c;
+      background-color: rgba(255, 0, 0, 0.5);
       /* Dark red */
+      color: white;
     }
     #Name {
       font-weight: bold;
@@ -330,6 +338,8 @@
     margin-top: 50px;
     margin-left: 0;
     padding: 0 !important;
+    position: absolute;
+    z-index: 999;
   }
   #menu li:hover{
     background-color: white;
