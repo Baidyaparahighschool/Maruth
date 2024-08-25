@@ -38,7 +38,8 @@
   <main>
     <div class="mapouter">
       <div class="gmap_canvas">
-        <iframe id="map-iframe" title="map" class="gmap_iframe" src="https://maps.google.com/maps?width=100%&height=100%&hl=en&q=Kolkata&t=&z=12&ie=UTF8&iwloc=B&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"></iframe>
+
+<iframe class="gmap_iframe" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=m/s&zoom=1&overlay=wind&product=ecmwf&level=surface&lat=20.5937&lon=78.9629&pressure=true&message=true" frameborder="0"></iframe>
       </div>
     </div>
 
@@ -146,12 +147,17 @@
       
    
     <div class="flexbox" id="flexbox">
-      <img class="img" id="img" src="" alt="Location Image" />
+      <div class="google-map">
+        <iframe id="map-iframe" title="map" class="gmap_iframe2" src="https://maps.google.com/maps?width=100%&height=100%&hl=en&q=Kolkata&t=&z=12&ie=UTF8&iwloc=B&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"></iframe>
+      </div>
+      <div class="nest-flexbox">
+              <img class="img" id="img" src="" alt="Location Image" />
     <div id="aqi-info">
       <div id="Name"></div>
       <div id="Value"></div>
     <!--   <div id="rem"></div> -->
     </div>
+      </div>
   </div>
   <h1>Pollution</h1>
   <div class="reference-index">
