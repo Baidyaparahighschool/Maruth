@@ -23,12 +23,13 @@
   <div id="menu">
     <ul>
       <li><button onclick="window.location.href='index.html';">Home</button></li>
+            <li><button onclick="window.location.href='Blog.html';">Blogs</button></li>
       <li><button onclick="window.location.href='Graph.html';">Graph view</button></li>
       <li><button onclick="window.location.href='Ai.html';">Maruth : Ai</button></li>
       <li><button onclick="window.location.href='Contact.html';">Contact</button></li>
     </ul>
   </div>
-    <div class="contact">
+    <div class="contact" id="contact">
 <form action="https://formsubmit.co/sharmaparbin91@gmail.com" method="POST">
 <input type="text" class="input" name="name" placeholder="Name" required />
 <input class="input" placeholder='Email' type="email" name="email" required />
@@ -45,7 +46,7 @@
   <script type="text/javascript" charset="utf-8">
     let menu_btn=document.getElementById("menubtn");
 let close_btn=document.getElementById("crossbtn");
-let menu=document.getElementById("menu");
+let contact=document.getElementById("contact");
 menu_btn.addEventListener("click",function(){
   close_btn.style.display="block";
   menu_btn.style.display="none";

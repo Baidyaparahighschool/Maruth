@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+          <link rel="shortcut icon" href="maruth.jfif" type="image/x-icon">
+    <link rel="stylesheet" href="Style.css" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css" media="all">
+:root {
+  --primary: #121212; /* Dark background */
+  --dark: #ffffff; /* Light text color */
+  --light: #1f1f1f; /* Darker card background */
+  --shadow: 1px 0px 5px #333333; /* Darker shadow */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--primary);
+  color: var(--dark);
+}
+
+.section {
+  padding: 70px 30px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.grid-row {
+  display: grid;
+  padding: 1rem;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  column-gap:3rem;
+  
+  justify-content: center;
+  align-items: baseline;
+  
+}
+
+.grid-row .grid-item span {
+  padding: 10px;
+  line-height: 1;
+}
+
+.grid-row .grid-item a {
+  font-size: 20px;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+
+.grid-row .grid-item:hover {
+  filter: contrast(1.2);
+}
+
+.grid-row .grid-item {
+  transition: filter 0.5s ease;
+  display: flex;
+  cursor: pointer;
+  background: var(--light);
+  box-shadow: var(--shadow);
+  color: var(--dark);
+  text-align: center;
+  font-family: sans-serif;
+  flex-direction: column-reverse;
+  align-items: center;
+  border-radius: 10px;
+}
+.grid-item img{
+  width: 100%;
+  border-radius: 10px;
+}
+.grid-item{
+  transform: scale(1.0);
+}
+.grid-item:hover{
+  transform: scale(1.2);
+}
+    </style>
+    <title>Maruth : Blogs</title>
+   
+  </head>
+  <body>
+          <header>
+    <div class="navbar">
+      <div class="flex">
+        <img src="maruth.jfif" alt=""><div class="logo">
+          MARUTH
+        </div>
+      </div>
+      <!-- <div class="logo">MARUTH</div> -->
+      <img id="menubtn" src="Media/menu.png" alt="" />
+      <img id="crossbtn" src="Media/cross.png" alt="" />
+    </div>
+  </header>
+  <div id="menu">
+    <ul>
+      <li><button onclick="window.location.href='index.html';">Home</button></li>
+            <li><button onclick="window.location.href='Blog.html';">Blogs</button></li>
+      <li><button onclick="window.location.href='Graph.html';">Graph view</button></li>
+      <li><button onclick="window.location.href='Ai.html';">Maruth : Ai</button></li>
+      <li><button onclick="window.location.href='Contact.html';">Contact</button></li>
+    </ul>
+  </div>
+    <div class="section" id="section">
+  <div class="container">
+    <div class="grid-row">
+      <div class="grid-item">
+        <span>
+         <a href="https://www.aqi.in/blog/how-air-pollution-affects-our-food/">Our Diet and Nutrition: How Air Pollution Affects Our Food?</a>
+          <p>According to FAO, around 691 to 783 million people have faced hunger in 2022. Additionally, they also highlighted that 2.4 billion people experienced severe food insecurity. </p>
+        </span>
+        <img src="https://i.postimg.cc/rp4ZvhnH/air-pollution-affects-food-nutrients-768x513.jpg" />
+      </div>
+      <div class="grid-item">
+        <span>
+         <a href="https://www.climaterealityproject.org/blog/rise-unnatural-disasters-wildfires">THE RISE IN UNNATURAL DISASTERS: WILDFIRES</a>
+          <p>Carbon pollution from burning fossil fuels like coal, oil, and natural gas is warming our planet and driving a climate crisis. It’s throwing natural systems out of balance – to often devastating effect.</p>
+        </span>
+        <img src="https://i.postimg.cc/bNXx5ycq/Burnout-ops-on-Mangum-Fire-Mc-Call-Smokejumpers.jpg" />
+      </div>
+      <div class="grid-item">
+        <span>
+         <a href="https://www.climaterealityproject.org/blog/climate-trace-invaluable-tool-climate-movement">CLIMATE TRACE: AN INVALUABLE TOOL FOR THE CLIMATE MOVEMENT </a>
+          <p>Combining machine learning, satellite data, and artificial intelligence, Climate TRACE gives advocates and decisionmakers the detailed emissions information to act.</p>
+        </span> <img src="https://i.postimg.cc/W180t0D4/images-19.jpg" />
+      </div>
+      <div class="grid-item">
+        <span>
+         <a href="https://www.aqi.in/blog/135-million-premature-deaths-due-to-air-pollution/">What is the Devastating Cost of Air Pollution:135 million premature deaths in four decades?</a>
+          <p>According to a recent study, air pollution has caused 135 million premature deaths over the past four decades (1980 to 2020), and the situation is worsening every year.</p>
+        </span> <img src="https://i.postimg.cc/7ZFHSZ5T/images-25.jpg" />
+      </div>
+      <div class="grid-item">
+        <span>
+         <a href="https://www.climaterealityproject.org/blog/what-chemical-recycling">WHAT IS CHEMICAL RECYCLING?</a>
+          <p>Communities all over the country are stepping up to share the real risks of petrochemicals, including advanced/chemical “recycling” facilities.</p>
+        </span> <img src="https://i.postimg.cc/PqNvx9s6/images-20.jpg" />
+      </div>
+      <div class="grid-item">
+        <span>
+         <a href="https://www.google.com/amp/s/timesofindia.indiatimes.com/blogs/the-write-wing/rising-tide-of-climate-concern-in-india-a-positive-shift-towards-sustainability/">Rising tide of climate concern in India: A positive shift towards sustainability</a>
+          <p>In an age where the impacts of climate change are becoming increasingly undeniable, it is heartening to see that Indians are significantly concerned about global warming and are ready to back governmental efforts towards a sustainable future.</p>
+        </span> <img src="https://i.postimg.cc/tCmCC5yk/images-24.jpg" />
+      </div>
+      <div class="grid-item">
+        <span>
+         <a href="https://www.forbesindia.com/blog/environment-and-sustainability/india-and-the-urgency-of-water-crisis/">India and the urgency of water crisis</a>
+          <p>Water scarcity and floods coexist in India and have adversely impacted our habitation. Therefore, taking a holistic view of water across agriculture, industrial, and energy production activities is imperative to tackle India's complex water challenge</p>
+        </span> <img src="https://i.postimg.cc/zBGN8ZsB/Getty-Images-87982084-BG.webp" />
+      </div>
+      <div class="grid-item">
+        <span>
+         <a href="https://www.ecoideaz.com/expert-corner/how-flowering-plants-improve-indoor-air-quality-and-promote-respiratory-health">How Flowering Plants Improve Indoor Air Quality and Promote Respiratory Health</a>
+          <p>Indoor air quality is a critical factor affecting our overall health and well-being. As more people spend significant amounts of time indoors, particularly in urban settings, the need for cleaner, healthier air has never been more pressing. While technology offers various solutions, nature provides an elegant and practical alternative: flowers.</p>
+        </span> <img src="https://i.postimg.cc/Fz2Xyf7d/flowering-plants-for-indoor-air-quality-696x475.jpg" />
+      </div>
+      <div class="grid-item">
+        <span>
+         <a href="https://timesofindia.indiatimes.com/blogs/blackslate-corner/innovative-afforestation-techniques-transforming-indias-landscapes-for-a-greener-future/">Innovative afforestation techniques: Transforming India’s landscapes for a greener future</a>
+          <p>Afforestation, the process of planting trees in areas that have not been forested for a long period, is a crucial strategy in combating climate change, mitigating the effects of heatwaves, and preventing various ecological disasters.</p>
+        </span> <img src="https://i.postimg.cc/KcVbSWJG/images-22.jpg" />
+      </div>
+      <div class="grid-item">
+        <span>
+         <a href="https://environmentality.cprindia.org/blog/why-india-must-start-viewing-air-pollution-and-climate-change-as-two-sides-of-the-same-coin">Why India must start viewing air pollution and climate change as two sides of the same coin</a>
+          <p>Any possibility of near-term regional warming due to the implementation of emission standards should be offset by aggressively cutting back short-lived warming pollutants.</p>
+        </span> <img src="https://i.postimg.cc/bw0fnw8r/images-23.jpg" />
+      </div>
+      <div class="grid-item">
+        <span>
+         <a href=" ">The non-health impacts of air pollution in India</a>
+          <p>Air pollution is a significant health risk in India, which is home to 39 of the world’s 50 most polluted cities in terms of PM2.5 particulate pollution.</p>
+        </span> <img src="https://i.postimg.cc/CKmyvrRV/Getty-Images-1247369265.webp" />
+      </div>
+
+    </div>
+  </div>
+</div>
+  </body>
+  <script type="text/javascript" charset="utf-8">
+    let menu_btn=document.getElementById("menubtn");
+let close_btn=document.getElementById("crossbtn");
+let menu=document.getElementById("menu");
+menu_btn.addEventListener("click",function(){
+  close_btn.style.display="block";
+  menu_btn.style.display="none";
+  menu.style.display="flex";
+  window.scrollTo(0,0);
+});
+close_btn.addEventListener("click", function() {  // Added missing functionality
+  close_btn.style.display = "none";
+  menu_btn.style.display = "block";
+  menu.style.display = "none";
+  window.scrollTo(0,0);
+});
+  </script>
+</html>

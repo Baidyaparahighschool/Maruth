@@ -217,17 +217,21 @@ max-width: 800px;
   font-size: 15px;
 }
 .reference-index {
-  border-radius: 10px;
+  
   width: 90%;
   max-width: 800px;
   margin-top: 20px;
   /* Space between map and reference index */
   background-color: #1e1e1e;
   /* Dark background */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 8px rgba(0,0,0,1);
   /* Darker shadow */
   overflow-x: auto;
   /* Handle horizontal overflow */
+}
+tr:nth-child(even) {
+            background-color: rgb(21,21,21);
+            box-shadow: 4px 4px 4px black;
 }
 .ai-div {
   position: fixed;
@@ -242,13 +246,13 @@ max-width: 800px;
   width: 70px;
 }
 .reference-index table {
-  border-radius: 10px;
+  border:0px;
   width: 100%;
   border-collapse: collapse;
 }
 
 .reference-index th, .reference-index td {
-  border: 1px solid #333;
+  
   /* Darker border */
   padding: 8px;
   text-align: left;
@@ -352,13 +356,12 @@ a {
 #menu {
   display: none;
   width: 100vw;
-  height: 100vh;
-  background-color: #121212;
-  z-index: 99;
+  height: 120vh;
+  background-color: #121212 !important;
+  z-index: 999;
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-
 }
 #menu ul {
   list-style: none;
@@ -446,3 +449,54 @@ hr {
 .input::placeholder {
   color: white;
 }
+
+
+
+.section {
+  padding: 70px 30px;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 350px));
+  grid-gap: 15px 15px;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.grid-row .grid-item span {
+  padding: 10px;
+  line-height: 1;
+}
+.grid-row .grid-item h3 {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+.grid-row .grid-item:hover {
+  filter: contrast(0.7);
+}
+.grid-row .grid-item {
+  transition: filter 0.5s ease;
+  display: flex;
+  cursor: pointer;
+  background: var(--light);
+  box-shadow: var(--shadow);
+  color: var(--dark);
+  text-align: center;
+  font-family: sans-serif;
+  flex-direction: column-reverse;
+  align-items: stretch;
+}
+/* Orientation: Portrait */
+@media only screen and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) and (min-device-width: 768px) and (max-device-width: 1007px) {
+  .gmap_iframe,.gmap_canvas{
+    height: 50vh;
+  }
+  .mapouter{
+    margin-bottom: 0px;
+  }
+}
+

@@ -351,10 +351,21 @@ body.hide-header .header {
     margin-top: 0.5rem;
   }
 }
+.cent{
+  width:100vw !important;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:auto;
+  
+}
   </style>
   <link rel="stylesheet" href="Style.css">
 </head>
 <body>
+  <div class="cent">
+    
+
   <header class="header">
     <!-- Header Greetings -->
     <h1 class="title">Maruth Ai</h1>
@@ -377,7 +388,7 @@ body.hide-header .header {
 
     </ul>
   </header>
-
+  </div>
   <!-- Chat List / Container -->
   <div class="chat-list"></div>
 
@@ -411,6 +422,13 @@ let isResponseGenerating = false;
 
 // API configuration
 const API_KEY = "AIzaSyBn0pJ2i-Igj5Ti2-EDvmiespM1HX33oWc"; // Your API key here
+
+
+//For emergency Api GEMINI
+//AIzaSyAJCluizR94fdFdIue0dx92-MCs0-NqKzI
+//AIzaSyDskJCa4shv0bwD8KirVhs-eIJLpe7-9aI
+//AIzaSyD7Lp1vFX14fifmLr5Nvp7miC0BSZU_2sA
+//
 const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${API_KEY}`;
 
 // Load theme and chat data from local storage on page load
@@ -527,7 +545,7 @@ const handleOutgoingChat = () => {
   isResponseGenerating = true;
 
   const html = `<div class="message-content">
-                  <img class="avatar" src="Media/maruth.jfif" alt="User avatar">
+                  <img class="avatar" src="maruth.jfif" alt="User avatar">
                   <p class="text"></p>
                 </div>`;
 
