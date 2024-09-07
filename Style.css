@@ -124,16 +124,6 @@ button:hover {
   border: rgb(144, 229, 255) 1px solid;
   /* Slightly lighter on hover */
 }
-
-.mapouter {
-  position: relative;
-  width: 100vw !important;
-  height: 0;
-  padding-bottom: 56.25%;
-  /* Aspect ratio 16:9 */
-  margin-bottom: 60px;
-}
-
 .gmap_canvas {
   position: relative;
   top: 0;
@@ -163,6 +153,26 @@ max-width: 800px;
   border: 0;
   
 }
+.mapouter {
+  position: relative;
+  width: 100vw !important;
+  height: 0;
+  padding-bottom: 56.25%;
+  /* Aspect ratio 16:9 */
+  margin-bottom: 60px;
+  background-color: red;
+}
+@media only screen and (min-width: 600px) {
+  .mapouter {
+    padding-bottom: 0;
+    margin-bottom: 360px;
+    background-color: rgb(0, 153, 255);
+  }
+  .gmap_canvas,.gmap_iframe{
+    height: 50vh !important;
+  }
+}
+
 
 #aqi-info {
   font-size: 18px;
